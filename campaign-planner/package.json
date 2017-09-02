@@ -1,0 +1,19 @@
+{
+  "name": "campaign-planner",
+  "version": "0.0.0",
+  "description": "Campaign Planner designed for D&D 5e",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dumbgenius/campaign-planner"
+  },
+  "scripts": {
+    "start": "meteor run",
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^1.2.5-npm-test.2",
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4",
+    "bower": "^1.7.9"
+  }
+}
