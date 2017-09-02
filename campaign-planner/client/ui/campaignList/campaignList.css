@@ -1,0 +1,15 @@
+.campaign-summary-row {
+	margin: 4px 12px 12px 12px;
+	height: 200px;
+}
+
+.campaign-summary-row .campaign-name-container {
+	margin: 4px;
+
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 48px;
+	text-shadow: 4px 4px 2px #000000;
+
+	display: inline-block;
+}

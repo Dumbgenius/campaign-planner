@@ -1,0 +1,19 @@
+<template name="campaignList">
+	<h2>Campaign List</h2>
+
+	<div class="campaignRows">
+	{{#each campaign in campaigns}}
+		{{>campaignSummaryRow campaign=campaign}}
+	{{/each}}
+	</div>
+
+	<button id="newCampaignButton">New Campaign</button>
+</template>
+
+<template name="campaignSummaryRow">
+	<a href="/campaign/{{campaign._id}}">
+		<div class="blue campaign-summary-row">
+			<div class="campaign-name-container">{{campaign.name}}</div>
+		</div>
+	</a>
+</template>

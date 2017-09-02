@@ -3,7 +3,7 @@ Template.layout.onCreated(function() {
 });
 
 Template.appDrawer.helpers({
-	profileLink: function() {
+	profileName: function() {
 		var user = Meteor.user();
 		return user.profile && user.profile.username || user.username || "My Account";
 	},

@@ -1,10 +1,10 @@
-//set up the global collection for characters
+//set up the global collection for campaigns
 Campaigns = new Mongo.Collection("campaigns");
 
 Schemas.Campaign = new SimpleSchema({
 	//strings
 	name:         {type: String, defaultValue: "", trim: false},
-	imageUrl:     {type: String, defaultValue: "", trim: true,  optional: true, regEx: SimpleSchema.RegEx.Url},
+	imageUrl:     {type: String, defaultValue: "", trim: true,  optional: true},
 
 	//permissions
 	owner:   {type: String, regEx: SimpleSchema.RegEx.Id},

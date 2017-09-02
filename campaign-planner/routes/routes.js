@@ -4,15 +4,14 @@ Router.configure({
 	trackPageView: true,
 });
 
-// Router.plugin("ensureSignedIn", {
-// 	only: [
-// 		"profile",
-// 		"campaignList",
-// 	]
-// });
+Router.plugin("ensureSignedIn", {
+ 	only: [
+ 		"profile",
+ 		"campaignList",
+ 	]
+});
 
 Router.plugin("dataNotFound", {notFoundTemplate: "notFound"});
-
 
 //  ROUTES
 Router.route("/", {
@@ -37,7 +36,8 @@ Router.route("/campaignList", {
 
 Router.route("/campaign/:_id", {
 	name: "campaign",
-	template: "campaignLayout",
+	layoutTemplate: "campaignLayout",
+	//template: "campaign",
 	waitOn: function() {
 		return [
 			subsManager.subscribe("campaign", this.params._id),
@@ -65,7 +65,7 @@ Router.route("/loading", {
 	template: "loading",
 });
 
-Router.route("/account", {
+Router.route("/profile", {
 	name: "profile",
 	template: "profile",
 	onAfterAction: function() {
