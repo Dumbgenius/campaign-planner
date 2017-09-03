@@ -6,10 +6,10 @@
 			<div class="campaign-name">{{campaign.name}}</div>
 		</app-toolbar>
 	</app-header>
-	<app-drawer id="navigationDrawer">
+
+	<app-drawer id="navigationDrawer" style="z-index: 20;" swipe-open>
 		{{>appDrawer}}
 	</app-drawer>
-	<paper-fab id="newItemButton" class="floatingButton" icon="add" title="New item"></paper-fab>
 
 	<div id="mainContent">
 		<paper-input label="Search" class="main-searchbar">
@@ -46,5 +46,7 @@
 				{{/each}}
 			</div>
 		{{/if}}
+
+		<paper-fab id="newItemButton" class="floatingButton" icon="add" title="New item"></paper-fab>
 	</div>
 </template>
