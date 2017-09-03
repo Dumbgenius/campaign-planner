@@ -1,0 +1,12 @@
+.floatingButton {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	/* stop the fab from flashing during animation */
+	transform: scale(1) translateZ(0px);
+	z-index: 3;
+}
+
+paper-fab {
+	background-color: #d13b2e;
+}

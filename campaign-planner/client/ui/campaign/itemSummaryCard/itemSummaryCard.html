@@ -1,0 +1,16 @@
+<template name="itemSummaryCard">
+	<div>
+		<paper-material class="card">
+			<div class="top red white-text paper-font-subhead layout horizontal">
+				<div class="flex">
+					{{item.name}}
+				</div>
+			</div>
+			{{#if item.text}}
+				<div class="bottom flex">
+					{{summary}}
+				</div>
+			{{/if}}
+		</paper-material>
+	</div>
+</template>

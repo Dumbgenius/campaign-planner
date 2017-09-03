@@ -16,7 +16,9 @@ Meteor.publish("campaign", function(campaignId){
 
 	if (campaign) {
 		return [
-			campaign, 
+			Campaigns.find({_id: campaignId}),
+
+			Items.find    ({campaignId: campaignId}),
 			//other child stuff goes here.
 		]
 	} else {

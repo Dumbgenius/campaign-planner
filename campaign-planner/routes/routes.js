@@ -44,11 +44,8 @@ Router.route("/campaign/:_id", {
 		];
 	},
 	data: function() {
-		var data = Campaigns.findOne(
-			{_id: this.params._id},
-			{fields: {_id: 1, name: 1}}
-		);
-		return data;
+		var campaign = Campaigns.findOne(this.params._id);
+		return {campaign: campaign};
 	},
 	onAfterAction: function() {
 		var campaign = Campaigns.findOne({_id: this.params._id}, {fields: {name: 1}});

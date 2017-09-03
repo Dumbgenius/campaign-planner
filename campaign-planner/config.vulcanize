@@ -18,6 +18,7 @@
 	"/components/iron-image/iron-image.html",
 	"/components/iron-pages/iron-pages.html",
 	"/components/iron-selector/iron-selector.html",
+	"/components/iron-flex-layout/iron-flex-layout-classes.html",
 
 	"/components/neon-animation/neon-animation.html",
 

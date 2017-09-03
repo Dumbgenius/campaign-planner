@@ -1,0 +1,36 @@
+.column-container {
+	column-fill: balance;
+	column-gap: 0px;
+	column-width: 304px;
+	padding: 4px;
+	transform: translateZ(0);
+}
+
+.column-container > div {
+	padding: 4px;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+/*Cards*/
+.card {
+	background: white;
+	border-radius: 2px;
+	position: initial;
+}
+
+.card .top {
+	cursor: pointer;
+	padding: 16px;
+	border-radius: 2px 2px 0 0;
+}
+
+.card .bottom {
+	padding: 16px;
+	border-radius: 0 0 2px 2px;
+}
+
+.card img, .card iron-image {
+	max-width: 100%;
+}
