@@ -1,26 +1,12 @@
-Template.campaignLayout.helpers({
-	searchResultsTitle: function(){
-		return; //TODO
-	},
-	searchResultsTags: function(){
-		return; //TODO
-	},
-	items: function(){
-		return Items.find({campaignId: this.campaign._id});
-	},
-	isSearching: function(){
-		return false; //TODO
-	},
+Template.layout.onCreated(function() {
+	subsManager.subscribe("user");
+});
 
-	neither: function(a, b){
-		return (!a && !b);
-	},
+Template.campaignLayout.helpers({
+	
 })
 
 Template.campaignLayout.events({
-	"tap #openDrawerButton": function(event, instance) {
-		navigationDrawer.toggle();
-	},
 	"tap #newItemButton": function(event, instance) {
 		var name=prompt("Name?");
 		var text=prompt("Text?");

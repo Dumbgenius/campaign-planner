@@ -1,11 +1,13 @@
 <template name="itemSummaryCard">
 	<div>
 		<paper-material class="card">
-			<div class="top red white-text paper-font-subhead layout horizontal">
-				<div class="flex">
-					{{item.name}}
+			<a href="/campaign/{{campaign._id}}/item/{{item._id}}">
+				<div class="top red white-text paper-font-subhead layout horizontal">
+					<div class="flex">
+						{{item.name}}
+					</div>
 				</div>
-			</div>
+			</a>
 			{{#if item.text}}
 				<div class="bottom flex">
 					{{summary}}

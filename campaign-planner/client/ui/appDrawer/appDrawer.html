@@ -1,0 +1,75 @@
+<template name="appDrawer">
+	<app-drawer style="z-index: 20;" swipe-open>
+		<app-header-layout class="white" has-scrolling-region>
+			<app-header id="accountSummary" effects="waterfall parallax-background" condenses fixed>
+				<app-toolbar>
+					{{#if currentUser}}
+						<a href="/profile" style="text-decoration: underline; cursor: pointer; font-size: 16px;">
+							{{profileName}}
+						</a>
+					{{else}}
+						<a href="/signIn" style="text-decoration: underline; cursor: pointer; font-size: 16px;">
+							Sign in
+						</a>
+					{{/if}}
+				</app-toolbar>
+			</app-header>
+			<div id="navigationPanel">
+
+				<!-- main navigation -->
+				<hr style="margin: 0 0 16px 0;">
+					<a href="/" tabindex="-1">
+						<paper-icon-item id="goHome">
+							<iron-icon icon="home" item-icon></iron-icon>
+							Home
+						</paper-icon-item>
+					</a>
+					<a href="/campaignList" tabindex="-1">
+						<paper-icon-item id="goCampaignList">
+							<iron-icon icon="apps" item-icon></iron-icon>
+							Campaign List
+						</paper-icon-item>
+					</a>
+					<!-- TODO
+					<a href="/guide" tabindex="-1">
+						<paper-icon-item id="guide">
+							<iron-icon icon="social:school" item-icon></iron-icon>
+							Guide
+						</paper-icon-item>
+					</a> 
+					-->
+					<a class="github" href="https://github.com/Dumbgenius/campaign-planner" target="_blank" tabindex="-1">
+						<paper-icon-item id="goGithub">
+							<iron-icon icon="code" item-icon></iron-icon>
+							GitHub
+						</paper-icon-item>
+					</a>
+				<hr style="margin: 16px 0 24px 0;">
+
+				{{#if campaign}}
+					<a href="/campaign/{{campaign._id}}" tabindex="-1">
+						<paper-icon-item id="goCampaignSearch">
+							<iron-icon icon="search" item-icon></iron-icon>
+							Search
+						</paper-icon-item>
+					</a>
+					<a href="/campaign/{{campaign._id}}/log" tabindex="-1">
+						<paper-icon-item id="goCampaignLog">
+							<iron-icon icon="description" item-icon></iron-icon>
+							Session Log
+						</paper-icon-item>
+					</a>
+					<a href="/campaign/{{campaign._id}}/calendar" tabindex="-1">
+						<paper-icon-item id="goCampaignCalendar">
+							<iron-icon icon="perm-contact-calendar" item-icon></iron-icon>
+							Calendar
+						</paper-icon-item>
+					</a>
+					<hr style="margin: 16px 0 24px 0;">
+				{{/if}}
+
+
+			</div>
+		</app-header-layout>
+	</app-drawer>
+</template>

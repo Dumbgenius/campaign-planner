@@ -1,0 +1,38 @@
+<template name="campaignSearch">
+	<paper-input label="Search" class="main-searchbar">
+		<iron-icon icon="search" prefix></iron-icon>
+	</paper-input>
+
+	{{#if isSearching}}
+		{{#if searchResultsTitle.count}}
+			<div class="paper-font-subhead">Matches in title</div>
+		{{/if}}
+		<div class="column-container">
+			{{#each item in searchResultsTitle}}
+				{{>itemSummaryCard item=item campaign=campaign}}
+			{{/each}}
+		</div>
+
+		{{#if searchResultsTags.count}}
+			<div class="paper-font-subhead">Matches in tags</div>
+		{{/if}}
+		<div class="column-container">
+			{{#each item in searchResultsTags}}
+				{{>itemSummaryCard item=item campaign=campaign}}
+			{{/each}}
+		</div>
+
+		{{#if neither searchResultsTags.count searchResultsTitle.count}}
+			<div class="paper-font-subhead">No results found.</div>
+		{{/if}}
+	{{else}}
+		<div class="paper-font-subhead">All items (no search term)</div>
+		<div class="column-container">
+			{{#each item in items}}
+				{{>itemSummaryCard item=item campaign=campaign}}
+			{{/each}}
+		</div>
+	{{/if}}
+
+	<paper-fab id="newItemButton" class="floatingButton" icon="add" title="New item"></paper-fab>
+</template>
