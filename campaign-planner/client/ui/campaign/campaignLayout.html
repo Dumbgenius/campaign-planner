@@ -1,13 +1,6 @@
 <template name="campaignLayout">
 	<app-drawer-layout>
 
-		<app-header>
-			<app-toolbar fixed class="blue campaign-toolbar layout horizontal">
-				<div class="campaign-name">{{campaign.name}}</div>
-				<div class="flex"></div> <!-- spacer -->
-			</app-toolbar>
-		</app-header>
-
 		{{>appDrawer campaign=campaign}}
 
 		<div id="mainContent">

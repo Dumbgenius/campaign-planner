@@ -1,4 +1,12 @@
 <template name="campaignSearch">
+
+	<app-header>
+		<app-toolbar fixed class="blue campaign-toolbar layout horizontal">
+			<div class="campaign-name">{{campaign.name}} - Search</div>
+			<div class="flex"></div> <!-- spacer -->
+		</app-toolbar>
+	</app-header>
+
 	<paper-input label="Search" class="main-searchbar">
 		<iron-icon icon="search" prefix></iron-icon>
 	</paper-input>

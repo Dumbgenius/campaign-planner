@@ -1,8 +1,42 @@
 <template name="campaignItem">
-	<!-- placeholder -->
+
+	<app-header>
+		<app-toolbar fixed class="blue campaign-toolbar layout horizontal">
+			<div class="campaign-name">{{item.name}}</div>
+			<div class="flex"></div> <!-- spacer -->
+			{{#if editing}}
+				<paper-icon-button id="doneEditingButton" icon="done"></paper-icon-button>
+			{{else}}
+				<paper-icon-button id="editButton" icon="create"></paper-icon-button>
+			{{/if}}
+		</app-toolbar>
+	</app-header>
+	
+
+	{{#if editing}}
+		{{>campaignItemEdit item=item campaign=campaign}}
+	{{else}}
+		{{>campaignItemView item=item campaign=campaign}}
+	{{/if}}
+
+</template>
+
+<template name="campaignItemView">
 	<h1>{{item.name}}</h1>
+
 	{{#each tag in item.tags}}
 		<span>{{tag}}</span>
 	{{/each}}
-	<p>{{item.text}}</p>
+
+	<p>
+		{{#markdown}}{{item.text}}{{/markdown}}
+	</p>
+</template>
+
+<template name="campaignItemEdit">
+
+	<paper-input id="itemNameInput" label="Name" value={{item.name}}></paper-input>
+
+	<paper-textarea id="itemTextInput" label="Text" value={{item.text}}></paper-textarea>
+
 </template>
