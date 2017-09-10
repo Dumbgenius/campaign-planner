@@ -39,7 +39,7 @@ Items.allow({
 		if (!campaign) return true; //so we can clean up orphaned items
 		return userId && campaign.owner === userId || _.contains(campaign.writers, userId);
 	},
-	fetch: ["charId"],
+	fetch: ["campaignId"],
 });
 
 Items.deny({
@@ -47,5 +47,5 @@ Items.deny({
 	update: function(userId, doc, fields, modifier) {
 		return _.contains(fields, "campaignId");
 	},
-	fetch: ["charId"],
+	fetch: ["campaignId"],
 });
